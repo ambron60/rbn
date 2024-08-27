@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/7e4b39bc-d9bf-4eba-9664-ebebb28b7c05)
 
 
 # Random Boolean Network (RBN) Simulation
