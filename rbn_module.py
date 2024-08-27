@@ -5,7 +5,7 @@ import matplotlib.colors as mcolors
 
 
 class RBN:
-    def __init__(self, nodes, min_k=3, max_k=20, topology=None):
+    def __init__(self, nodes, min_k=1, max_k=2, topology=None):
         """
         Initialize the Random Boolean Network.
 
@@ -14,6 +14,10 @@ class RBN:
         :param max_k: Maximum number of inputs (K) each node can have.
         :param topology: Optional predefined topology. If None, a random topology will be generated.
         """
+        # Ensure max_k does not exceed the number of available nodes
+        if max_k >= nodes:
+            raise ValueError(f"max_k ({max_k}) cannot be greater than or equal to the number of nodes ({nodes}).")
+
         self.nodes = nodes
         self.min_k = min_k
         self.max_k = max_k
