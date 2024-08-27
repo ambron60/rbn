@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/7e4b39bc-d9bf-4eba-9664-ebebb28b7c05)
+
+
 # Random Boolean Network (RBN) Simulation
 
 This project provides a Python implementation of a Random Boolean Network (RBN) to simulate and visualize the dynamics of such networks. This repository is designed to help you explore how varying the number of inputs per node (K) affects the behavior of the network, including the emergence of order, chaos, and attractors.
