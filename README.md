@@ -1,4 +1,6 @@
 
+<img width="880" alt="Screenshot 2024-08-27 at 10 17 50" src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee">
+
 
 # Random Boolean Network (RBN) Simulation
 
