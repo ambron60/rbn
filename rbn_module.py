@@ -73,6 +73,10 @@ class RBN:
         def identity_function(inputs):
             return inputs[0] if inputs else False
 
+        # def complex_function(inputs):
+        #     mid = len(inputs) // 2
+        #     return xor_function(inputs[:mid]) or and_function(inputs[mid:])
+
         possible_functions = [and_function, or_function, not_function, xor_function, identity_function]
         return {node: random.choice(possible_functions) for node in self.topology.keys()}
 
