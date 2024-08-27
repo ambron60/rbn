@@ -36,6 +36,6 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 To use this project, clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/yourusername/rbn-project.git
+git clone https://github.com/ambron60/rbn-project.git
 cd rbn-project
 pip install -r requirements.txt
