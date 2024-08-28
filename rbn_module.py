@@ -128,11 +128,6 @@ class RBN:
         # Invert the y-axis so that Node 1 is on top
         ax.invert_yaxis()
 
-        # Add top ticks without labels
-        ax.tick_params(axis='x', which='both', top=True, bottom=False, labeltop=False)
-        ax.set_xticks(np.arange(0.5, time_steps, 1))  # Tick marks in the center of each time step
-        ax.set_xticklabels([''] * time_steps)
-
         # Add y-ticks for nodes
         ax.set_yticks(np.arange(0.5, len(nodes), 1))
         ax.set_yticklabels([f"Node {node}" for node in nodes])
