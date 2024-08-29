@@ -99,7 +99,7 @@ class RBN:
             new_state[node] = self.functions[node](input_states)
 
         # Apply noise after updating the state (optional)
-        self.apply_noise(noise_level=0.01)
+        # self.apply_noise(noise_level=0.01)
 
         self.state = new_state
 
@@ -127,8 +127,8 @@ class RBN:
         time_steps = len(history)
         data = np.array([[history[t][node] for node in nodes] for t in range(time_steps)])
 
-        # Create a custom colormap: red for 0 and blue for 1 with higher contrast
-        cmap = mcolors.ListedColormap(['red', 'blue'])
+        # Create a custom colormap: gray for 0 and blue for 1 with higher contrast
+        cmap = mcolors.ListedColormap(['gray', 'blue'])
         bounds = [-0.5, 0.5, 1.5]
         norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
@@ -148,8 +148,8 @@ class RBN:
         # Set the labels and title
         plt.xlabel("Time Step")
         plt.ylabel("Node")
-        plt.colorbar(mesh, label="State (0=red, 1=blue)", ticks=[0, 1])
-        plt.title("RBN State Evolution (Red = 0, Blue = 1)\n")
+        plt.colorbar(mesh, label="State (0=gray, 1=blue)", ticks=[0, 1])
+        plt.title("RBN State Evolution (Gray = 0, Blue = 1)\n")
         plt.show()
 
     @staticmethod

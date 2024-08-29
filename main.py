@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print(f"Node {node} has {len(inputs)} inputs.")
 
     # Simulate the RBN for x number of steps
-    history = rbn.simulate(steps=30)
+    history = rbn.simulate(steps=50)
 
     # Plot the history of states using the custom heatmap
     rbn.plot_history(history)
