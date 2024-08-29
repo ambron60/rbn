@@ -80,14 +80,27 @@ class RBN:
         possible_functions = [and_function, or_function, not_function, xor_function, identity_function]
         return {node: random.choice(possible_functions) for node in self.topology.keys()}
 
+    def apply_noise(self, noise_level=0.10):
+        """
+        Introduce noise by randomly flipping the state of some nodes.
+        :param noise_level: Probability of flipping each node's state.
+        """
+        for node in self.state.keys():
+            if random.random() < noise_level:
+                self.state[node] = 1 - self.state[node]
+
     def update_network(self):
         """
-        Update the network state based on the current topology and Boolean functions.
+            Update the network state based on the current topology and Boolean functions.
         """
         new_state = {}
         for node, inputs in self.topology.items():
             input_states = [self.state[i] for i in inputs]
             new_state[node] = self.functions[node](input_states)
+
+        # Apply noise after updating the state (optional)
+        self.apply_noise(noise_level=0.01)
+
         self.state = new_state
 
     def simulate(self, steps):
