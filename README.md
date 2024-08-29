@@ -21,6 +21,7 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 - **K (Connectivity)**: The number of inputs that influence each node. This can vary for different nodes within the network.
 - **Boolean Functions**: Each node's state is updated based on a Boolean function that takes as input the states of its connected nodes.
 - **Attractors**: RBNs tend to fall into attractors—repeating patterns of states that the network will cycle through indefinitely.
+- **Optional Noise Function:** Introduce noise into the network by randomly flipping the state of nodes with a configurable probability.
 
 ### Behavioral Phases of RBNs
 
