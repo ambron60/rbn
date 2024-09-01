@@ -29,24 +29,14 @@ class RBN:
         return self.state[node]
 
     def random_topology(self):
-        """
-        Generate a random topology where each node is influenced by a random number of other nodes.
-        """
         topology = {}
         for node in range(1, self.nodes + 1):
-            # Randomly assign K influences between min_k and max_k
             num_influences = random.randint(self.min_k, self.max_k)
             influences = random.sample(range(1, self.nodes + 1), num_influences)
+            if node in influences:
+                influences.remove(node)  # Prevent self-loops
             topology[node] = influences
         return topology
-
-    # Uncomment and use the below for a fixed K on each node.
-    # def random_topology(self):
-    #     topology = {}
-    #     for node in range(1, self.nodes + 1):
-    #         influences = random.sample(range(1, self.nodes + 1), 5)  # Fixed K = 5
-    #         topology[node] = influences
-    #     return topology
 
     def random_functions(self):
         """
@@ -99,7 +89,7 @@ class RBN:
             new_state[node] = self.functions[node](input_states)
 
         # Apply noise after updating the state (optional)
-        # self.apply_noise(noise_level=0.01)
+        self.apply_noise(noise_level=0.10)
 
         self.state = new_state
 
