@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee" width="475" alt="">
-  <img src="https://github.com/user-attachments/assets/4adb3b82-9436-4831-a249-e6cc9198c5c2" width="399" alt="">
+  <img src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee" width="333" alt="">
+  <img src="https://github.com/user-attachments/assets/4adb3b82-9436-4831-a249-e6cc9198c5c2" width="279" alt="">
 </p>
 
 # Random Boolean Networks (RBNs)
