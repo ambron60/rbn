@@ -1,5 +1,5 @@
-<img width="528" alt="Screenshot 2024-08-27 at 10 17 50" src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee">
-<img width="444" alt="Screenshot 2024-09-01 at 10 24 57" src="https://github.com/user-attachments/assets/4adb3b82-9436-4831-a249-e6cc9198c5c2">
+<img width="475" alt="Screenshot 2024-08-27 at 10 17 50" src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee">
+<img width="399" alt="Screenshot 2024-09-01 at 10 24 57" src="https://github.com/user-attachments/assets/4adb3b82-9436-4831-a249-e6cc9198c5c2">
 
 # Random Boolean Networks (RBNs)
 
