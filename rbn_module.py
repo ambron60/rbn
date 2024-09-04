@@ -42,7 +42,6 @@ class RBN:
         """
         Randomly assign a Boolean function to each node.
         """
-
         def and_function(inputs):
             return all(inputs)
 
@@ -63,11 +62,24 @@ class RBN:
         def identity_function(inputs):
             return inputs[0] if inputs else False
 
-        # def complex_function(inputs):
-        #     mid = len(inputs) // 2
-        #     return xor_function(inputs[:mid]) or and_function(inputs[mid:])
+        def nand_function(inputs):
+            return not all(inputs)
 
-        possible_functions = [and_function, or_function, not_function, identity_function]
+        def nor_function(inputs):
+            return not any(inputs)
+
+        def random_function(inputs):
+            return random.choice([True, False])
+
+        def majority_function(inputs):
+            return inputs.count(True) > len(inputs) // 2
+
+        def parity_function(inputs):
+            return sum(inputs) % 2 == 1
+
+        possible_functions = [
+            and_function, or_function, identity_function, parity_function
+        ]
         return {node: random.choice(possible_functions) for node in self.topology.keys()}
 
     def apply_noise(self, noise_level=0.10):
