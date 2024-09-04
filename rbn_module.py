@@ -5,7 +5,7 @@ import matplotlib.colors as mcolors
 
 
 class RBN:
-    def __init__(self, nodes, min_k=1, max_k=2, topology=None):
+    def __init__(self, nodes, min_k=1, max_k=20, topology=None):
         """
         Initialize the Random Boolean Network.
 
@@ -23,7 +23,7 @@ class RBN:
         self.max_k = max_k
         self.state = {node: random.choice([0, 1]) for node in range(1, nodes + 1)}
         self.topology = topology if topology else self.random_topology()
-        self.functions = self.random_functions()
+        self.functions = self.boolean_functions()
 
     def __getitem__(self, node):
         return self.state[node]
@@ -38,7 +38,7 @@ class RBN:
             topology[node] = influences
         return topology
 
-    def random_functions(self):
+    def boolean_functions(self):
         """
         Randomly assign a Boolean function to each node.
         """
@@ -67,7 +67,7 @@ class RBN:
         #     mid = len(inputs) // 2
         #     return xor_function(inputs[:mid]) or and_function(inputs[mid:])
 
-        possible_functions = [and_function, or_function, not_function, xor_function, identity_function]
+        possible_functions = [and_function, or_function, not_function, identity_function]
         return {node: random.choice(possible_functions) for node in self.topology.keys()}
 
     def apply_noise(self, noise_level=0.10):
