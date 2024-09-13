@@ -15,15 +15,31 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 
 ### Key Concepts
 
-- **Nodes**: The basic elements of the network, each holding a binary state (0 or 1).
-- **K (Connectivity)**: The number of inputs that influence each node. This can vary for different nodes within the network.
-- **Boolean Functions**: Each node's state is updated based on a Boolean function that takes as input the states of its connected nodes.
-  - **Note:** Benefits of Using Random Truth Tables include:
-    - Enhanced Complexity: Allows the network to explore a larger space of possible behaviors.
-    - Unbiased Behavior: There's no inherent bias towards specific logical operations.
-    Alignment with RBN Theory: Reflects the original intention behind RBNs to study complex systems with random interactions.
-- **Attractors**: RBNs tend to fall into attractors—repeating patterns of states that the network will cycle through indefinitely.
-- **Optional Noise Function:** Introduce noise into the network by randomly flipping the state of nodes with a configurable probability.
+**Nodes:**
+- The fundamental units of the network, each holding a binary state (0 or 1).
+
+**K (Connectivity):**
+- The number of inputs that influence each node. This can vary for different nodes within the network, but often a fixed value of \\( K \\) is used for all nodes in theoretical studies.
+
+**Boolean Functions:**
+- Each node updates its state based on a Boolean function that takes as input the states of its connected nodes. In Random Boolean Networks (RBNs), these functions are typically represented by random truth tables that assign an output of 0 or 1 to every possible combination of input states.
+
+**Benefits of Using Random Truth Tables:**
+
+- **Enhanced Complexity:**
+  - Allows the network to explore a larger space of possible behaviors due to the vast number of possible Boolean functions (\\( 2^{2^K} \\) for \\( K \\) inputs).
+  
+- **Unbiased Behavior:**
+  - There's no inherent bias towards specific logical operations, enabling a more general and unbiased study of network dynamics.
+
+- **Alignment with RBN Theory:**
+  - Reflects the original intention behind RBNs to study complex systems with random interactions, capturing the diversity and unpredictability of real-world networks.
+
+**Attractors:**
+- RBNs tend to fall into attractors—repeating patterns of states or cycles—that the network will cycle through indefinitely once reached. These can be fixed points (steady states) or limit cycles of various lengths.
+
+**Optional Noise Function:**
+- Introduce noise into the network by randomly flipping the state of nodes with a configurable probability. This allows for the study of the network's robustness and response to perturbations, simulating real-world uncertainties.
 
 ### Behavioral Phases of RBNs
 
