@@ -31,78 +31,39 @@ class RBN:
     def random_topology(self):
         topology = {}
         for node in range(1, self.nodes + 1):
-            num_influences = random.randint(self.min_k, self.max_k)
-            influences = random.sample(range(1, self.nodes + 1), num_influences)
-            if node in influences:
-                influences.remove(node)  # Prevent self-loops
+            possible_nodes = list(range(1, self.nodes + 1))
+            possible_nodes.remove(node)  # Exclude self-loop
+            num_influences = random.randint(self.min_k, min(self.max_k, len(possible_nodes)))
+            influences = random.sample(possible_nodes, num_influences)
             topology[node] = influences
         return topology
 
     def boolean_functions(self):
         """
-        Randomly assign a Boolean function to each node.
+        Generate a random Boolean function (truth table) for each node based on its K inputs.
         """
-        def and_function(inputs):
-            return all(inputs)
+        functions = {}
+        for node, inputs in self.topology.items():
+            k = len(inputs)
+            num_combinations = 2 ** k
+            # Randomly assign output for each possible input combination
+            truth_table = [random.choice([0, 1]) for _ in range(num_combinations)]
+            functions[node] = (inputs, truth_table)
+        return functions
 
-        def or_function(inputs):
-            return any(inputs)
-
-        def not_function(inputs):
-            return not inputs[0] if inputs else False
-
-        def xor_function(inputs):
-            if len(inputs) == 2:
-                return inputs[0] != inputs[1]
-            elif len(inputs) == 1:
-                return inputs[0]
-            else:
-                return False
-
-        def identity_function(inputs):
-            return inputs[0] if inputs else False
-
-        def nand_function(inputs):
-            return not all(inputs)
-
-        def nor_function(inputs):
-            return not any(inputs)
-
-        def random_function(inputs):
-            return random.choice([True, False])
-
-        def majority_function(inputs):
-            return inputs.count(True) > len(inputs) // 2
-
-        def parity_function(inputs):
-            return sum(inputs) % 2 == 1
-
-        possible_functions = [
-            and_function, or_function, identity_function, parity_function
-        ]
-        return {node: random.choice(possible_functions) for node in self.topology.keys()}
-
-    def apply_noise(self, noise_level=0.10):
-        """
-        Introduce noise by randomly flipping the state of some nodes.
-        :param noise_level: Probability of flipping each node's state.
-        """
+    def apply_noise(self, noise_level=0.01):  # Reduced from 0.10 to 0.01
         for node in self.state.keys():
             if random.random() < noise_level:
                 self.state[node] = 1 - self.state[node]
 
     def update_network(self):
-        """
-            Update the network state based on the current topology and Boolean functions.
-        """
         new_state = {}
-        for node, inputs in self.topology.items():
+        for node, (inputs, truth_table) in self.functions.items():
             input_states = [self.state[i] for i in inputs]
-            new_state[node] = self.functions[node](input_states)
-
-        # Apply noise after updating the state (optional)
-        self.apply_noise(noise_level=0.10)
-
+            index = int(''.join(map(str, input_states)), 2)
+            new_state[node] = truth_table[index]
+        # Optional: Apply noise after updating the state
+        self.apply_noise(noise_level=0.01)
         self.state = new_state
 
     def simulate(self, steps):

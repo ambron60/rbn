@@ -3,7 +3,7 @@ from rbn_module import RBN
 
 if __name__ == "__main__":
     # Create an RBN with 15 nodes and random K between 1 and x
-    rbn = RBN(nodes=20, min_k=1, max_k=3)
+    rbn = RBN(nodes=20, min_k=1, max_k=2)
 
     for node, inputs in rbn.topology.items():
         print(f"Node {node} has {len(inputs)} inputs.")
