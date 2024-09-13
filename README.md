@@ -14,7 +14,6 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 - The network evolves over time, with the state of each node being updated based on its Boolean function.
 
 ### Key Concepts
-
 **Nodes:**
 - The fundamental units of the network, each holding a binary state (0 or 1).
 
