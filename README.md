@@ -1,4 +1,4 @@
-![Alt text](img/rnb-demo.png){: width="50%"}
+![Alt text](img/rnb-demo.png)
 
 # Random Boolean Networks (RBNs)
 
