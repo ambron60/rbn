@@ -16,7 +16,7 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 - **Nodes**: The basic elements of the network, each holding a binary state (0 or 1).
 - **K (Connectivity)**: The number of inputs that influence each node. This can vary for different nodes within the network.
 - **Boolean Functions**: Each node's state is updated based on a Boolean function that takes as input the states of its connected nodes.
-  - **Note:** Benefits of Using Random Truth Tables include (09-13-2024):
+  - **Note:** Benefits of Using Random Truth Tables include:
     - Enhanced Complexity: Allows the network to explore a larger space of possible behaviors.
     - Unbiased Behavior: There's no inherent bias towards specific logical operations.
     Alignment with RBN Theory: Reflects the original intention behind RBNs to study complex systems with random interactions.
