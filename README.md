@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6d311710-a3a1-4c0d-ac5e-3e9f1de84eee" width="333" alt="">
-  <img src="https://github.com/user-attachments/assets/4adb3b82-9436-4831-a249-e6cc9198c5c2" width="279" alt="">
-</p>
-
 # Random Boolean Networks (RBNs)
 
 This project provides a Python implementation of a Random Boolean Network (RBN) to simulate and visualize the dynamics of such networks. This repository is designed to help you explore how varying the number of inputs per node (K) affects the behavior of the network, including the emergence of order, chaos, and attractors.
@@ -21,6 +16,10 @@ A Random Boolean Network (RBN) is a type of mathematical model used to study the
 - **Nodes**: The basic elements of the network, each holding a binary state (0 or 1).
 - **K (Connectivity)**: The number of inputs that influence each node. This can vary for different nodes within the network.
 - **Boolean Functions**: Each node's state is updated based on a Boolean function that takes as input the states of its connected nodes.
+  - **Note:** Benefits of Using Random Truth Tables include (09-13-2024):
+    - Enhanced Complexity: Allows the network to explore a larger space of possible behaviors.
+    - Unbiased Behavior: There's no inherent bias towards specific logical operations.
+    Alignment with RBN Theory: Reflects the original intention behind RBNs to study complex systems with random interactions.
 - **Attractors**: RBNs tend to fall into attractors—repeating patterns of states that the network will cycle through indefinitely.
 - **Optional Noise Function:** Introduce noise into the network by randomly flipping the state of nodes with a configurable probability.
 
