@@ -2,7 +2,6 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
-
 class RBN:
     def __init__(self, nodes, min_k=1, max_k=20, topology=None):
         """
